@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>企画書｜ストーリープレイング導入のご提案｜株式会社集遊 様</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:    #FAF7F2;
+      --parchment:#F0E9DC;
+      --peach:    #E8D5C4;
+      --amber:    #C8956C;
+      --brown:    #8B5E3C;
+      --dark:     #3D2B1F;
+      --ink:      #5C3D2E;
+      --mist:     #9A8878;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #f5f5f5;
+      color: var(--dark);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: white;
+      margin: 2rem auto;
+      padding: 0;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+
+    /* ─── 表紙 ─── */
+    .cover {
+      background: var(--dark);
+      color: white;
+      padding: 60px 56px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,149,108,0.25), transparent 70%);
+      top: -120px; right: -80px;
+    }
+
+    .cover::after {
+      content: '';
+      position: absolute;
+      width: 250px; height: 250px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,149,108,0.15), transparent 70%);
+      bottom: -60px; left: 40px;
+    }
+
+    .cover-label {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      color: var(--amber);
+      margin-bottom: 48px;
+      position: relative; z-index: 1;
+    }
+
+    .cover-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: white;
+      margin-bottom: 12px;
+      position: relative; z-index: 1;
+    }
+
+    .cover-subtitle {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.1em;
+      margin-bottom: 56px;
+      position: relative; z-index: 1;
+    }
+
+    .cover-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      position: relative; z-index: 1;
+    }
+
+    .cover-meta-item label {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      color: var(--amber);
+      margin-bottom: 4px;
+    }
+
+    .cover-meta-item .value {
+      font-size: 13px;
+      color: rgba(255,255,255,0.85);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 6px;
+      min-height: 28px;
+    }
+
+    /* ─── 本文 ─── */
+    .body-content {
+      padding: 48px 56px;
+    }
+
+    .section {
+      margin-bottom: 44px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--peach);
+    }
+
+    .section-num {
+      width: 28px; height: 28px;
+      background: var(--amber);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--dark);
+      letter-spacing: 0.05em;
+    }
+
+    p {
+      font-size: 13px;
+      color: var(--ink);
+      line-height: 1.95;
+      margin-bottom: 12px;
+    }
+
+    .highlight-box {
+      background: var(--parchment);
+      border-left: 3px solid var(--amber);
+      padding: 16px 20px;
+      margin: 16px 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .highlight-box p { margin-bottom: 0; }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 16px 0;
+    }
+
+    .card-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 16px 0;
+    }
+
+    .card {
+      background: var(--cream);
+      border: 1px solid var(--peach);
+      border-radius: 4px;
+      padding: 16px 14px;
+    }
+
+    .card-icon { font-size: 20px; margin-bottom: 8px; }
+
+    .card-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--brown);
+      margin-bottom: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .card-text {
+      font-size: 11.5px;
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    /* ─── 比較テーブル ─── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 12px;
+    }
+
+    .compare-table th {
+      padding: 10px 14px;
+      text-align: center;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    .compare-table th:first-child { background: transparent; }
+    .compare-table th:nth-child(2) {
+      background: #4A6FA5;
+      color: white;
+      border-radius: 4px 4px 0 0;
+    }
+    .compare-table th:nth-child(3) {
+      background: var(--amber);
+      color: white;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .compare-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--peach);
+      color: var(--ink);
+      text-align: center;
+    }
+
+    .compare-table td:first-child {
+      text-align: left;
+      font-weight: 500;
+      color: var(--brown);
+      background: var(--cream);
+    }
+
+    .compare-table td:nth-child(2) { background: #F0F4FA; }
+    .compare-table td:nth-child(3) { background: #FDF5EE; }
+
+    /* ─── フロー ─── */
+    .flow-horizontal {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      margin: 20px 0;
+      position: relative;
+      align-items: start;
+    }
+
+    .flow-horizontal::before {
+      content: '';
+      position: absolute;
+      top: 22px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(to right, #4A6FA5, var(--amber));
+    }
+
+    .flow-step {
+      text-align: center;
+      padding: 0 6px;
+      position: relative;
+    }
+
+    .flow-num {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 500;
+      margin: 0 auto 10px;
+      position: relative;
+      z-index: 1;
+      font-family: 'Noto Serif JP', serif;
+    }
+
+    .flow-num.existing {
+      background: #4A6FA5;
+      color: white;
+    }
+
+    .flow-num.new {
+      background: var(--amber);
+      color: white;
+      box-shadow: 0 0 0 3px rgba(200,149,108,0.3);
+    }
+
+    .flow-title {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 5px;
+    }
+
+    .flow-text {
+      font-size: 10px;
+      color: var(--mist);
+      line-height: 1.6;
+    }
+
+    .flow-badge {
+      display: inline-block;
+      font-size: 8px;
+      padding: 1px 6px;
+      border-radius: 10px;
+      margin-bottom: 5px;
+      letter-spacing: 0.08em;
+    }
+
+    .flow-badge.existing-badge { background: #E8EEF6; color: #4A6FA5; }
+    .flow-badge.new-badge { background: var(--peach); color: var(--brown); }
+
+    /* ─── 実績 ─── */
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .work-card {
+      border: 1px solid var(--peach);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .work-card-header {
+      background: var(--dark);
+      color: white;
+      padding: 10px 14px;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 12px;
+    }
+
+    .work-card-body {
+      padding: 12px 14px;
+      background: var(--cream);
+    }
+
+    .work-card-body .tag {
+      display: inline-block;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      color: var(--amber);
+      border: 1px solid var(--amber);
+      padding: 1px 7px;
+      border-radius: 2px;
+      margin-bottom: 7px;
+    }
+
+    .work-card-body p { font-size: 11.5px; margin-bottom: 0; }
+
+    /* ─── 料金 ─── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 12px;
+    }
+
+    thead th {
+      background: var(--dark);
+      color: white;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    tbody td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--peach);
+      color: var(--ink);
+      vertical-align: top;
+    }
+
+    tbody tr:nth-child(even) td { background: var(--cream); }
+    tbody tr:last-child td { border-bottom: none; }
+    .td-label { font-weight: 500; color: var(--brown); white-space: nowrap; }
+
+    /* ─── プロフィール ─── */
+    .profile-box {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 20px;
+      background: var(--parchment);
+      border-radius: 4px;
+      padding: 20px;
+      align-items: start;
+    }
+
+    .profile-avatar {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--peach);
+      flex-shrink: 0;
+    }
+
+    .profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+    .profile-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .profile-name-en {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--mist);
+      margin-bottom: 10px;
+    }
+
+    .profile-text { font-size: 12px; color: var(--ink); line-height: 1.85; margin-bottom: 0; }
+
+    /* ─── お問い合わせ ─── */
+    .contact-box {
+      background: var(--dark);
+      border-radius: 4px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .contact-box .label { font-size: 10px; letter-spacing: 0.25em; color: var(--amber); margin-bottom: 6px; }
+    .contact-box .value { font-size: 14px; color: white; letter-spacing: 0.05em; }
+    .contact-box .sub { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 3px; }
+
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; margin: 0; width: 100%; }
+    }
+
+    /* ─── ページ区切り制御 ─── */
+    .section {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-header {
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    .card, .work-card, .highlight-box, .profile-box, .contact-box {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .card-grid, .card-grid-2, .work-grid, .flow-horizontal {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    table {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    tr {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 表紙 -->
+  <div class="cover">
+    <p class="cover-label">PROPOSAL DOCUMENT</p>
+    <h1 class="cover-title">アソビズへのプラスオン提案<br>オリジナルストーリープレイング<br>導入のご提案</h1>
+    <p class="cover-subtitle">謎解きが解き明かす「答え」に、物語が解き明かす「感情」を加える。</p>
+
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <label>提出先</label>
+        <div class="value">株式会社集遊　御中</div>
+      </div>
+      <div class="cover-meta-item">
+        <label>提出日</label>
+        <div class="value">2026年4月30日</div>
+      </div>
+      <div class="cover-meta-item">
+        <label>提案者</label>
+        <div class="value">シナリオ作家　まりも</div>
+      </div>
+      <div class="cover-meta-item">
+        <label>連絡先</label>
+        <div class="value">X : @marimo_mystery</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 本文 -->
+  <div class="body-content">
+
+    <!-- 1. はじめに -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <h2 class="section-title">はじめに</h2>
+      </div>
+      <p>
+        株式会社集遊様が展開される「アソビズ」は、謎解きというアソビの力で企業の人材課題に向き合う、業界でも先駆的な取り組みだと認識しております。「講義→計画→謎解き→振り返り」という体験設計は、主体性や心理的安全性を育む場として高い効果を発揮されていると拝察いたします。
+      </p>
+      <p>
+        本提案では、そのプログラムに「ストーリープレイング」を組み合わせることで、<strong>謎解きでは届きにくい感情・共感の層</strong>にアプローチし、研修効果をさらに深めるご提案をさせていただきます。
+      </p>
+      <div class="highlight-box">
+        <p>集遊様のミッション「社会にアソビをインストールする」に、<strong>物語というアソビを加える</strong>——そのパートナーとしてご検討いただけますと幸いです。</p>
+      </div>
+    </div>
+
+    <!-- 2. 謎解き研修との違いと補完性 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">2</div>
+        <h2 class="section-title">謎解き研修との違いと補完性</h2>
+      </div>
+      <p>謎解きとストーリープレイングは「競合」ではなく「補完」の関係にあります。両者を組み合わせることで、研修が認知・感情の両面をカバーできるようになります。</p>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>謎解き研修（アソビズ）</th>
+            <th>ストーリープレイング（提案）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-label">主軸</td>
+            <td>論理・推理・チームワーク</td>
+            <td>感情・共感・自己内省</td>
+          </tr>
+          <tr>
+            <td class="td-label">体験の特徴</td>
+            <td>答えのある問いを解く</td>
+            <td>答えのない選択を重ねる</td>
+          </tr>
+          <tr>
+            <td class="td-label">期待される学び</td>
+            <td>主体性・協働・達成感</td>
+            <td>傾聴・自己開示・心理的安全性</td>
+          </tr>
+          <tr>
+            <td class="td-label">振り返りの深さ</td>
+            <td>行動・プロセスの振り返り</td>
+            <td>感情・価値観の振り返り</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="font-size:11.5px; color:var(--mist);">※ストーリープレイングを単独で、または謎解き研修の後半プログラムとして組み込むことを想定しています。</p>
+    </div>
+
+    <!-- 3. プログラム組み込みイメージ -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">3</div>
+        <h2 class="section-title">プログラム組み込みイメージ</h2>
+      </div>
+      <p>現行のアソビズのフローに、ストーリープレイングを「感情の振り返り」として追加するイメージです。</p>
+
+      <div class="flow-horizontal">
+        <div class="flow-step">
+          <span class="flow-badge existing-badge">既存</span>
+          <div class="flow-num existing">講義</div>
+          <div class="flow-title">インプット</div>
+          <p class="flow-text">研修テーマの学習・目標設定</p>
+        </div>
+        <div class="flow-step">
+          <span class="flow-badge existing-badge">既存</span>
+          <div class="flow-num existing">計画</div>
+          <div class="flow-title">チーム設計</div>
+          <p class="flow-text">役割分担・作戦立案</p>
+        </div>
+        <div class="flow-step">
+          <span class="flow-badge existing-badge">既存</span>
+          <div class="flow-num existing">謎解き</div>
+          <div class="flow-title">体験（論理）</div>
+          <p class="flow-text">協働・主体性・達成感</p>
+        </div>
+        <div class="flow-step">
+          <span class="flow-badge new-badge">新規追加</span>
+          <div class="flow-num new">物語</div>
+          <div class="flow-title">体験（感情）</div>
+          <p class="flow-text">共感・自己開示・傾聴</p>
+        </div>
+        <div class="flow-step">
+          <span class="flow-badge existing-badge">既存</span>
+          <div class="flow-num existing">振返</div>
+          <div class="flow-title">内省・共有</div>
+          <p class="flow-text">より深い対話が生まれる</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <p>謎解きで「チームとして動く」体験をしたあと、ストーリープレイングで「個人として感じる」体験を重ねることで、振り返りの対話が<strong>行動レベルから感情・価値観レベルへ</strong>深まります。</p>
+      </div>
+    </div>
+
+    <!-- 4. ご提案できること -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">4</div>
+        <h2 class="section-title">ご提案できること</h2>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon">📖</div>
+          <div class="card-title">オリジナルシナリオ制作</div>
+          <p class="card-text">貴社の研修テーマ（心理的安全性・傾聴・主体性など）に合わせたストーリープレイングシナリオを完全オリジナルで制作します。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <div class="card-title">研修設計へのアドバイス</div>
+          <p class="card-text">既存プログラムのどの位置にストーリープレイングを組み込むか、効果が最大化される設計をご提案します。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔄</div>
+          <div class="card-title">複数テーマへの展開</div>
+          <p class="card-text">新任管理職研修・心理的安全性研修など、異なる研修テーマごとに複数シナリオのシリーズ展開も対応可能です。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4-2. 制作の特色 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">✦</div>
+        <h2 class="section-title">制作の特色——「終わった後の感情」を設計する</h2>
+      </div>
+      <p>
+        ストーリープレイングの質は、プレイ中の面白さだけでは決まりません。<strong>シナリオが終わった後、参加者がどんな感情を抱えて席を立つか</strong>——その余韻まで含めて設計することが、私の制作における最も重視するポイントです。
+      </p>
+      <div class="card-grid-2">
+        <div class="card">
+          <div class="card-icon">🎭</div>
+          <div class="card-title">感情の着地点を設計する</div>
+          <p class="card-text">「このシナリオを終えた参加者に、何を感じてほしいか」を起点に物語を構築します。後悔・希望・温かさ・決意など、研修テーマに合った感情の着地点をご一緒に設定し、そこへ自然に誘う構成を作ります。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📐</div>
+          <div class="card-title">感情の流れをコントロールする</div>
+          <p class="card-text">序盤・中盤・終盤で参加者の感情がどのように動くかを意図的に設計します。緊張・共感・葛藤・解放といった感情の起伏を計算することで、振り返りの対話がより深く、自然に引き出されます。</p>
+        </div>
+      </div>
+      <div class="highlight-box">
+        <p>「面白かった」で終わるコンテンツではなく、<strong>「あのとき自分はこう感じた」と翌日も語れる体験</strong>を届けることが、研修における行動変容につながると考えています。</p>
+      </div>
+    </div>
+
+    <!-- 5. 想定される研修テーマ -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">5</div>
+        <h2 class="section-title">想定される研修テーマとシナリオ例</h2>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30%">研修テーマ</th>
+            <th style="width:35%">ストーリープレイングのアプローチ</th>
+            <th>期待される効果</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-label">心理的安全性</td>
+            <td>「本音を言えなかった過去」を持つキャラクターを演じ、言葉にする難しさと大切さを体感</td>
+            <td>自己開示・傾聴の実践につながる</td>
+          </tr>
+          <tr>
+            <td class="td-label">新任管理職研修</td>
+            <td>メンバーとの葛藤・決断を迫られる場面を物語形式で体験</td>
+            <td>管理職としての感情整理・対話力強化</td>
+          </tr>
+          <tr>
+            <td class="td-label">世代間コミュニケーション</td>
+            <td>異なる価値観を持つキャラクター同士の対話を体験</td>
+            <td>相互理解・共感力の向上</td>
+          </tr>
+          <tr>
+            <td class="td-label">主体性・当事者意識</td>
+            <td>「選択」が物語を動かす構造で、自分の意思決定が結果を変える体験を提供</td>
+            <td>当事者意識と責任感の醸成</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 6. 制作実績 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">6</div>
+        <h2 class="section-title">制作実績</h2>
+      </div>
+      <p>Uzuにて19作品以上を発表。感情に深く寄り添うシナリオ設計を得意としています。</p>
+
+      <div class="work-grid">
+        <div class="work-card">
+          <div class="work-card-header">にじんだ景色のその先に</div>
+          <div class="work-card-body">
+            <span class="tag">STORY PLAYING</span>
+            <p>現代を舞台に、2人で紡ぐ追憶の物語。「再会」「後悔」「赦し」をテーマに、プレイヤーの感情を丁寧に引き出す構成が特徴。Uzu・BOOTH両プラットフォームで販売中。</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-header">月照の村</div>
+          <div class="work-card-body">
+            <span class="tag">MURDER MYSTERY · 5人</span>
+            <p>古くからの掟が支配する村を舞台にした5人用マーダーミステリー。集団の中での葛藤・選択・信頼をテーマに、濃密な人間ドラマが展開。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. 進め方 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">7</div>
+        <h2 class="section-title">進め方</h2>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width:20%">フェーズ</th>
+            <th style="width:35%">内容</th>
+            <th>期間目安</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-label">①ヒアリング</td>
+            <td>研修テーマ・ターゲット・実施形式・既存プログラムとの接続点の確認</td>
+            <td>打ち合わせ1〜2回</td>
+          </tr>
+          <tr>
+            <td class="td-label">②構成提案</td>
+            <td>シナリオ概要・登場人物・物語構造の提出・フィードバック</td>
+            <td>約2週間</td>
+          </tr>
+          <tr>
+            <td class="td-label">③制作・修正</td>
+            <td>本文制作・貴社からのフィードバックをもとに2回まで修正対応</td>
+            <td>約4〜6週間</td>
+          </tr>
+          <tr>
+            <td class="td-label">④納品・導入支援</td>
+            <td>データ納品・GM（進行役）向けマニュアル作成・実施時の相談対応</td>
+            <td>納品後随時</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 8. 制作者プロフィール -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">8</div>
+        <h2 class="section-title">制作者プロフィール</h2>
+      </div>
+      <div class="profile-box">
+        <div class="profile-avatar">
+          <img src="avatar.png" alt="まりも">
+        </div>
+        <div>
+          <div class="profile-name">まりも</div>
+          <div class="profile-name-en">Marimo / Scenario Writer</div>
+          <p class="profile-text">
+            ストーリープレイング・マーダーミステリーのシナリオ作家。Uzuにて19作品以上を発表（共同制作含む）。「プレイしたあと、しばらく余韻が続く」をテーマに、感情に寄り添うシナリオ制作を得意とする。論理的な謎解きとは異なるアプローチで、参加者の感情・内省・対話を引き出すコンテンツ設計を行う。<br><br>
+            ポートフォリオ：https://marimo-portfolio.pages.dev/
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. お問い合わせ -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">9</div>
+        <h2 class="section-title">お問い合わせ</h2>
+      </div>
+      <p>ご興味をお持ちいただけましたら、まずはオンラインでの打ち合わせ（30分程度）からお気軽にどうぞ。</p>
+      <div class="contact-box">
+        <div>
+          <div class="label">X（旧Twitter）</div>
+          <a href="https://twitter.com/marimo_mystery" target="_blank" style="text-decoration:none;">
+            <div class="value" style="text-decoration:underline; text-underline-offset:3px;">@marimo_mystery</div>
+          </a>
+          <div class="sub">DMにてお問い合わせください</div>
+        </div>
+        <div>
+          <div class="label">PORTFOLIO</div>
+          <a href="https://marimo-portfolio.pages.dev/" target="_blank" style="text-decoration:none;">
+            <div class="value" style="text-decoration:underline; text-underline-offset:3px;">marimo-portfolio.pages.dev</div>
+          </a>
+          <div class="sub">実績・作品詳細はこちら</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
